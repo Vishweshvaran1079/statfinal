@@ -5,10 +5,15 @@
   box-sizing: border-box;
 }
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: #f8f9fa;
+  font-family: 'Inter', Tahoma, Geneva, Verdana, sans-serif;
+  background: #ffffff;
   color: #1e293b;
   display: flex;
+  border: 1px solid #081420;
+  box-shadow: 0 0 0 2px #081420;
+  border-radius: 3px;
+  overflow: hidden;
+  margin: 2px;
 }
 
 .dashboard {
@@ -19,7 +24,7 @@ body {
 /* Sidebar Redesign */
 .sidebar {
   width: 240px;
-  background: #0f172a;
+  background: #081420;
   color: #fff;
   padding: 1.5rem 1rem;
   display: flex;
@@ -189,7 +194,6 @@ table {
 }
 th, td {
   padding: 1rem;
-  border-bottom: 1px solid #e2e8f0;
   text-align: left;
   font-size: 0.95rem;
 }
@@ -198,15 +202,15 @@ th:first-child, td:first-child {
 }
 .status.paid {
   color: green;
-  font-weight: 600;
+  font-weight: 200;
 }
 .status.cancelled {
   color: red;
-  font-weight: 600;
+  font-weight: 200;
 }
 .status.refunded {
   color: orange;
-  font-weight: 600;
+  font-weight: 200;
 }
 
 /* Right Sidebar */
@@ -386,54 +390,274 @@ th:first-child, td:first-child {
   color: #fff;
   border-style: solid;
 }
+.semicircle-stat {
+  text-align: center;
+  font-family: 'Inter', sans-serif;
+}
 
-/* Action bar when items selected */
-.footer-actions {
-  background-color: #0f172a;
-  color: white;
+.stat-title {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  margin-bottom: 12px;
+  color: #111827;
+}
+
+.gauge-wrapper {
+  width: 160px;
+  height: 80px;
+  margin: 0 auto;
+}
+
+.gauge-svg {
+  width: 100%;
+  height: 100%;
+}
+
+.gauge-bg {
+  fill: none;
+  stroke: #CBD5E1;
+  stroke-width: 8;
+  stroke-linecap: round;
+}
+
+.gauge-fill {
+  fill: none;
+  stroke: #1E4D41;
+  stroke-width: 8;
+  stroke-linecap: round;
+}
+
+.main-amount {
+  font-size: 10px;
+  font-weight: bold;
+  fill: #000;
+}
+
+.sub-orders {
+  font-size: 8px;
+  fill: #94A3B8;
+}
+
+.gauge-metrics {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+  padding: 0 10px;
+}
+
+.metric {
   display: flex;
   align-items: center;
-  gap: 0.25rem;
-  padding: 0.35rem 0.6rem;
-  border-radius: 5px;
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
-  font-size: 0.8rem;
-  position: fixed;
-  bottom: 2rem;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 1000;
-  max-width: 500px;
+  gap: 6px;
 }
-.footer-actions button {
-  background: transparent;
-  border: none;
-  color: white;
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+.green {
+  background-color: #1E4D41;
+}
+
+.gray {
+  background-color: #CBD5E1;
+}
+
+.amount {
+  font-size: 14px;
   font-weight: 500;
-  display: flex;
-  align-items: center;
-  gap: 0.3rem;
-  cursor: pointer;
-  padding: 0.25rem 0.5rem;
+  color: #000;
 }
-.footer-actions button svg {
-  width: 13px;
-  height: 13px;
-  vertical-align: middle;
+
+.label {
+  font-size: 12px;
+  color: #94A3B8;
 }
-.footer-actions button:not(:last-child) {
-  border-right: 1px solid #334155;
-  padding-right: 0.5rem;
-  margin-right: 0.5rem;
-}
-.footer-actions .close-btn {
-  padding: 0.3rem 0.5rem;
-  font-size: 0.85rem;
-  background: #0f172a;
-  border-radius: 6px;
-  border: 1px solid #1e293b;
+.footer-actions {
   display: flex;
   align-items: center;
   justify-content: center;
+  font-family: 'Inter', sans-serif;
+  margin-top: 24px;
+}
+
+.cancel-box {
+  background-color: #0f172a;
+  border-radius: 6px;
+  margin-right: 8px; /* <-- gap between cancel and the rest */
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
+}
+
+.cancel-btn {
+  border: none;
+  background: transparent;
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  padding: 14px 20px;
   cursor: pointer;
+}
+
+.action-box {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  background-color: #0f172a;
+  border-radius: 6px;
+  padding: 14px 20px;;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
+}
+
+.action-box span,
+.action-box button {
+  color: white;
+  background: transparent;
+  border: none;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+}
+.customer-cell .customer-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #e5e7eb;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-transform: uppercase;
+}
+
+.avatar-img {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+.overview {
+  margin-top: 20px;
+  font-family: 'Inter', sans-serif;
+}
+
+.overview-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.overview-header h4 {
+  font-size: 12px;
+  letter-spacing: 0.5px;
+  font-weight: 600;
+  color: #0f172a;
+  text-transform: uppercase;
+}
+
+.right-label {
+  font-size: 12px;
+  color: #64748b;
+}
+
+.overview-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  row-gap: 14px;
+  column-gap: 24px;
+}
+
+.overview-item strong {
+  display: block;
+  font-size: 15px;
+  color: #0f172a;
+}
+
+.overview-item span {
+  font-size: 12px;
+  color: #94a3b8;
+}
+.filters {
+  border-bottom: 1px solid #e2e8f0; /* Adjust color to match design */
+  padding-bottom: 25px;
+  margin-bottom: 20px;
+}
+.orders-table {
+  margin-top: -1rem;
+}
+.search-wrapper {
+  display: flex;
+  align-items: center;
+  background-color: #1e293b;
+  border: 1px solid #334155;
+  border-radius: 9999px;
+  color: #cbd5e1;
+  width: 100%;
+  max-width: 220px;
+}
+
+.search-wrapper .search-icon {
+  width: 16px;
+  height: 16px;
+  stroke: #94a3b8;
+  flex-shrink: 0;
+  display: inline-block;
+  margin-right: 8px;
+  margin-left: 8px;
+}
+
+.search-wrapper input.search {
+  background: transparent;
+  border: none;
+  outline: none;
+  color: #cbd5e1;
+  font-size: 14px;
+  padding: 6px 0 2px; /* Top padding increased */
+  position: relative;
+  top: 7px; /* Add this to slightly push the text down */
+  flex: 1;
+}
+
+.search-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background-color: #1e293b;
+  padding: 8px 12px;
+  border-radius: 999px;
+  border: 1px solid #334155;
+  width: 100%;
+}
+
+.search-wrapper input.search {
+  background: transparent;
+  border: none;
+  outline: none;
+  color: #cbd5e1;
+  font-size: 14px;
+  flex: 1;
+  padding: 2px 0 0;
+  position: relative;
+  top: 7px; /* Add this to slightly push the text down */
+}
+
+.search-shortcut {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  color: #64748b;
+  font-size: 12px;
+  padding: 2px 6px;
+  border-radius: 6px;
+  font-weight: 500;
 }
