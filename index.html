@@ -7,418 +7,512 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <div class="top">
   <div class="dashboard">
-    <aside class="sidebar">
-      <h2 class="logo">⚙ Mate</h2>
-      <nav class="nav">
-       <div class="search-wrapper">
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-search">
-            <path d="m21 21-4.34-4.34"/>
-            <circle cx="11" cy="11" r="8"/>
+    <div class="wrapper sidebar-open" id="layoutWrapper">
+
+
+      <aside class="sidebar" id="sidebar">
+        <h2 class="logo">⚙ Mate</h2>
+        <div class="collapse-btn" onclick="toggleSidebar()">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-left-from-line">
+            <path d="m9 6-6 6 6 6"/>
+            <path d="M3 12h14"/>
+            <path d="M21 19V5"/>
           </svg>
-          
-          <input type="text" placeholder="Search" class="search" />
-          
-          <span class="search-shortcut">
-            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-command">
-              <path d="M15 6v12a3 3 0 1 0 3-3H6a3 3 0 1 0 3 3V6a3 3 0 1 0-3 3h12a3 3 0 1 0-3-3"/>
-            </svg>
-            F
-          </span>
         </div>
         
-        <ul>
-          <li><a href="#">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-layout-dashboard-icon lucide-layout-dashboard"><rect width="7" height="9" x="3" y="3" rx="1"/><rect width="7" height="5" x="14" y="3" rx="1"/><rect width="7" height="9" x="14" y="12" rx="1"/><rect width="7" height="5" x="3" y="16" rx="1"/></svg>
-            Dashboard
-          </a></li>
-          <li class="active"><a href="#">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12h6m-6 4h6M5 6h14M5 6v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V6H5z"/></svg>
-            Orders
-          </a></li>
-          <li><a href="#">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-warehouse-icon lucide-warehouse"><path d="M18 21V10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1v11"/><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V8a2 2 0 0 1 1.132-1.803l7.95-3.974a2 2 0 0 1 1.837 0l7.948 3.974A2 2 0 0 1 22 8z"/><path d="M6 13h12"/><path d="M6 17h12"/></svg>
-            Inventory
-          </a></li>
-          <li><a href="#">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-credit-card-icon lucide-credit-card"><rect width="20" height="14" x="2" y="5" rx="2"/><line x1="2" x2="22" y1="10" y2="10"/></svg>
-            Payments
-          </a></li>
-          <li><a href="#">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-users-round-icon lucide-users-round"><path d="M18 21a8 8 0 0 0-16 0"/><circle cx="10" cy="8" r="5"/><path d="M22 20c0-3.37-2-6.5-4-8a5 5 0 0 0-.45-8.3"/></svg>
-            Customers
-          </a></li>
-        </ul>
-        <ul class="secondary">
-          <li><a href="#">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-bell-icon lucide-bell"><path d="M10.268 21a2 2 0 0 0 3.464 0"/><path d="M3.262 15.326A1 1 0 0 0 4 17h16a1 1 0 0 0 .74-1.673C19.41 13.956 18 12.499 18 8A6 6 0 0 0 6 8c0 4.499-1.411 5.956-2.738 7.326"/></svg>
-            Notifications <span class="badge">1</span>
-          </a></li>
-          <li><a href="#">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-circle-help-icon lucide-circle-help"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><path d="M12 17h.01"/></svg>
-            Help & support
-          </a></li>
-          <li><a href="#">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-bolt-icon lucide-bolt"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><circle cx="12" cy="12" r="4"/></svg>
-            Settings
-          </a></li>
-        </ul>
-        
-    <div class="user">
-      <div class="avatar">OW</div>
-          <span>Olivia Williams</span>
-        </div>
-      </nav>
-    </aside>
+        <!-- 🔁 Your full sidebar content goes here (Search, Nav links, Avatar, etc.) -->
+        <!-- You already have this written. Paste your full sidebar block here. -->
+        <nav class="nav">
+            <div class="search-wrapper">
+               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-search">
+                 <path d="m21 21-4.34-4.34"/>
+                 <circle cx="11" cy="11" r="8"/>
+               </svg>
+               
+               <input type="text" placeholder="Search" class="search" />
+               
+               <span class="search-shortcut">
+                 <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-command">
+                   <path d="M15 6v12a3 3 0 1 0 3-3H6a3 3 0 1 0 3 3V6a3 3 0 1 0-3 3h12a3 3 0 1 0-3-3"/>
+                 </svg>
+                 F
+               </span>
+             </div>
+             
+             <ul>
+               <li><a href="#">
+                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-layout-dashboard-icon lucide-layout-dashboard"><rect width="7" height="9" x="3" y="3" rx="1"/><rect width="7" height="5" x="14" y="3" rx="1"/><rect width="7" height="9" x="14" y="12" rx="1"/><rect width="7" height="5" x="3" y="16" rx="1"/></svg>
+                 Dashboard
+               </a></li>
+               <li class="active"><a href="#">
+                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12h6m-6 4h6M5 6h14M5 6v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V6H5z"/></svg>
+                 Orders
+               </a></li>
+               <li><a href="#">
+                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-warehouse-icon lucide-warehouse"><path d="M18 21V10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1v11"/><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V8a2 2 0 0 1 1.132-1.803l7.95-3.974a2 2 0 0 1 1.837 0l7.948 3.974A2 2 0 0 1 22 8z"/><path d="M6 13h12"/><path d="M6 17h12"/></svg>
+                 Inventory
+               </a></li>
+               <li><a href="#">
+                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-credit-card-icon lucide-credit-card"><rect width="20" height="14" x="2" y="5" rx="2"/><line x1="2" x2="22" y1="10" y2="10"/></svg>
+                 Payments
+               </a></li>
+               <li><a href="#">
+                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-users-round-icon lucide-users-round"><path d="M18 21a8 8 0 0 0-16 0"/><circle cx="10" cy="8" r="5"/><path d="M22 20c0-3.37-2-6.5-4-8a5 5 0 0 0-.45-8.3"/></svg>
+                 Customers
+               </a></li>
+             </ul>
+             <ul class="secondary">
+               <li><a href="#">
+                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-bell-icon lucide-bell"><path d="M10.268 21a2 2 0 0 0 3.464 0"/><path d="M3.262 15.326A1 1 0 0 0 4 17h16a1 1 0 0 0 .74-1.673C19.41 13.956 18 12.499 18 8A6 6 0 0 0 6 8c0 4.499-1.411 5.956-2.738 7.326"/></svg>
+                 Notifications <span class="badge">1</span>
+               </a></li>
+               <li><a href="#">
+                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-circle-help-icon lucide-circle-help"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><path d="M12 17h.01"/></svg>
+                 Help & support
+               </a></li>
+               <li><a href="#">
+                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-bolt-icon lucide-bolt"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><circle cx="12" cy="12" r="4"/></svg>
+                 Settings
+               </a></li>
+             </ul>
+             
+         <div class="user">
+           <div class="avatar">OW</div>
+               <span>Olivia Williams</span>
+             </div>
+           </nav>
+      </aside>
 
-    <main class="main-content">
-      <div class="header-toolbar">
-        <h1>Orders</h1>
-        <div class="import-export-group">
-          <button class="import">↓ Import</button>
-          <button class="export">↑ Export</button>
-        </div>
-      </div>
-      
-      <div class="filters">
-        <button class="active">Type ▾</button>
-        <button>Status ▾</button>
-        <button>Order date ▾</button>
-        <button>All filters ▾</button>
-      </div>
-       <section class="orders-table">
-        <table>
-          <thead>
-            <tr>
-              <th><input type="checkbox" /></th>
-              <th>Order</th>
-              <th>Customer</th>
-              <th>Type</th>
-              <th>Status</th>
-              <th>Product</th>
-              <th>Total</th>
-              <th>Date</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td><input type="checkbox" /></td>
-              <td>#192541</td>
-              <td class="customer-cell">
-                <div class="customer-info">
-                  <div class="avatar">EH</div>
-                  <span>Esther Howard</span>
-                </div>
-              </td>
-              <td>Shipping</td>
-              <td class="status paid">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check">
-                  <path d="M20 6 9 17l-5-5"/>
-                </svg>
-                Paid
-              </td>
-              <td>Stihl TS 800</td>
-              <td>$3,127.00</td>
-              <td>Jun 19</td>
-            </tr>
+      <!-- ✅ MAIN CONTENT -->
+      <main class="main-content" id="mainContent">
+        <div class="header-toolbar">
+            <h1>Orders</h1>
+            <div class="import-export-group">
+              <button class="import">↓ Import</button>
+              <button class="export">↑ Export</button>
+            </div>
+          </div>
           
-            <tr>
-              <td><input type="checkbox" /></td>
-              <td>#192540</td>
-              <td class="customer-cell">
-                <div class="customer-info">
-                  <div class="avatar">DM</div>
-                  <span>David Miller</span>
-                </div>
-              </td>
-              <td>Pickups</td>
-              <td class="status paid">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check">
-                  <path d="M20 6 9 17l-5-5"/>
-                </svg>
-                Paid
-              </td>
-              <td>Angle Grinder</td>
-              <td>$212.00</td>
-              <td>Jun 18</td>
-            </tr>
-          
-            <tr>
-              <td><input type="checkbox" /></td>
-              <td>#192539</td>
-              <td class="customer-cell">
-                <div class="customer-info">
-                  <div class="avatar">JM</div>
-                  <span>James Moore</span>
-                </div>
-              </td>
-              <td>Shipping</td>
-              <td class="status paid">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check">
-                  <path d="M20 6 9 17l-5-5"/>
-                </svg>
-                Paid
-              </td>
-              <td>Tool Kit Pro</td>
-              <td>$1,490.00</td>
-              <td>Jun 17</td>
-            </tr>
-          
-            <tr>
-              <td><input type="checkbox" /></td>
-              <td>#192538</td>
-              <td class="customer-cell">
-                <div class="customer-info">
-                  <div class="avatar">RA</div>
-                  <span>Robert Anderson</span>
-                </div>
-              </td>
-              <td>Shipping</td>
-              <td class="status paid">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check">
-                  <path d="M20 6 9 17l-5-5"/>
-                </svg>
-                Paid
-              </td>
-              <td>Hammer Drill</td>
-              <td>$389.99</td>
-              <td>Jun 17</td>
-            </tr>
-          
-            <tr>
-              <td><input type="checkbox" /></td>
-              <td>#192537</td>
-              <td class="customer-cell">
-                <div class="customer-info">
-                  <div class="avatar">JM</div>
-                  <span>Jessica Martinez</span>
-                </div>
-              </td>
-              <td>Shipping</td>
-              <td class="status refunded">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="orange" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-corner-down-left">
-                  <path d="M20 4v7a4 4 0 0 1-4 4H4"/>
-                  <path d="m9 10-5 5 5 5"/>
-                </svg>
-                Refunded
-              </td>
+          <div class="filters">
+            <button class="active">Type ▾</button>
+            <button>Status ▾</button>
+            <button>Order date ▾</button>
+            <button>All filters ▾</button>
+          </div>
+           <section class="orders-table">
+            <table>
+              <thead>
+                <tr>
+                  <th><input type="checkbox" /></th>
+                  <th>Order</th>
+                  <th>Customer</th>
+                  <th>Type</th>
+                  <th>Status</th>
+                  <th>Product</th>
+                  <th>Total</th>
+                  <th>Date</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><input type="checkbox" class="row-checkbox"/></td>
+                  <td>#192541</td>
+                  <td class="customer-cell">
+                    <div class="customer-info">
+                      <div class="avatar">EH</div>
+                      <span>Esther Howard</span>
+                    </div>
+                  </td>
+                  <td>Shipping</td>
+                  <td class="status paid">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check">
+                      <path d="M20 6 9 17l-5-5"/>
+                    </svg>
+                    Paid
+                  </td>
+                  <td>Stihl TS 800</td>
+                  <td>$3,127.00</td>
+                  <td class="date-cell">Jun 19</td>
+                  <td class="action-menu">
+                    <button class="dots-btn">⋯</button>
+                  </td>
+                </tr>
               
-              <td>Cordless Saw</td>
-              <td>$580.00</td>
-              <td>Jun 16</td>
-            </tr>
+                <tr>
+                  <td><input type="checkbox" /></td>
+                  <td>#192540</td>
+                  <td class="customer-cell">
+                    <div class="customer-info">
+                      <div class="avatar">DM</div>
+                      <span>David Miller</span>
+                    </div>
+                  </td>
+                  <td>Pickups</td>
+                  <td class="status paid">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check">
+                      <path d="M20 6 9 17l-5-5"/>
+                    </svg>
+                    Paid
+                  </td>
+                  <td>Angle Grinder</td>
+                  <td>$212.00</td>
+                  <td class="date-cell">Jun 18</td>
+    
+                  <td class="action-menu">
+                    <button class="dots-btn">⋯</button>
+                  </td>
+                </tr>
+              
+                <tr>
+                  <td><input type="checkbox" /></td>
+                  <td>#192539</td>
+                  <td class="customer-cell">
+                    <div class="customer-info">
+                      <div class="avatar">JM</div>
+                      <span>James Moore</span>
+                    </div>
+                  </td>
+                  <td>Shipping</td>
+                  <td class="status paid">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check">
+                      <path d="M20 6 9 17l-5-5"/>
+                    </svg>
+                    Paid
+                  </td>
+                  <td>Tool Kit Pro</td>
+                  <td>$1,490.00</td>
+                  <td class="date-cell">Jun 17</td>
+    
+                  <td class="action-menu">
+                    <button class="dots-btn">⋯</button>
+                  </td>
+                </tr>
+              
+                <tr>
+                  <td><input type="checkbox" /></td>
+                  <td>#192538</td>
+                  <td class="customer-cell">
+                    <div class="customer-info">
+                      <div class="avatar">RA</div>
+                      <span>Robert Anderson</span>
+                    </div>
+                  </td>
+                  <td>Shipping</td>
+                  <td class="status paid">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check">
+                      <path d="M20 6 9 17l-5-5"/>
+                    </svg>
+                    Paid
+                  </td>
+                  <td>Hammer Drill</td>
+                  <td>$389.99</td>
+                  <td class="date-cell">Jun 17</td>
+    
+                  <td class="action-menu">
+                    <button class="dots-btn">⋯</button>
+                  </td>
+                </tr>
+              
+                <tr>
+                  <td><input type="checkbox" /></td>
+                  <td>#192537</td>
+                  <td class="customer-cell">
+                    <div class="customer-info">
+                      <div class="avatar">JM</div>
+                      <span>Jessica Martinez</span>
+                    </div>
+                  </td>
+                  <td>Shipping</td>
+                  <td class="status refunded">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="orange" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-corner-down-left">
+                      <path d="M20 4v7a4 4 0 0 1-4 4H4"/>
+                      <path d="m9 10-5 5 5 5"/>
+                    </svg>
+                    Refunded
+                  </td>
+                  
+                  <td>Cordless Saw</td>
+                  <td>$580.00</td>
+                  <td class="date-cell">Jun 16</td>
+    
+                  <td class="action-menu">
+                    <button class="dots-btn">⋯</button>
+                  </td>
+                </tr>
+              
+                <tr>
+                  <td><input type="checkbox" /></td>
+                  <td>#192536</td>
+                  <td class="customer-cell">
+                    <div class="customer-info">
+                      <div class="avatar">WJ</div>
+                      <span>William Jackson</span>
+                    </div>
+                  </td>
+                  <td>Shipping</td>
+                  <td class="status paid">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check">
+                      <path d="M20 6 9 17l-5-5"/>
+                    </svg>
+                    Paid
+                  </td>
+                  <td>Multi-Tool Set</td>
+                  <td>$299.00</td>
+                  <td class="date-cell">Jun 16</td>
+    
+                  <td class="action-menu">
+                    <button class="dots-btn">⋯</button>
+                  </td>
+                </tr>
+              
+                <tr>
+                  <td><input type="checkbox" /></td>
+                  <td>#192535</td>
+                  <td class="customer-cell">
+                    <div class="customer-info">
+                      <div class="avatar">CH</div>
+                      <span>Christopher Harris</span>
+                    </div>
+                  </td>
+                  <td>Pickups</td>
+                  <td class="status paid">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check">
+                      <path d="M20 6 9 17l-5-5"/>
+                    </svg>
+                    Paid
+                  </td>
+                  <td>Generator GX200</td>
+                  <td>$2,090.50</td>
+                  <td class="date-cell">Jun 15</td>
+    
+                  <td class="action-menu">
+                    <button class="dots-btn">⋯</button>
+                  </td>
+                </tr>
+              
+                <tr>
+                  <td><input type="checkbox" /></td>
+                  <td>#192534</td>
+                  <td class="customer-cell">
+                    <div class="customer-info">
+                      <div class="avatar">MK</div>
+                      <span>Marcus Kenter</span>
+                    </div>
+                  </td>
+                  <td>Shipping</td>
+                  <td class="status paid">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check">
+                      <path d="M20 6 9 17l-5-5"/>
+                    </svg>
+                    Paid
+                  </td>
+                  <td>Air Compressor</td>
+                  <td>$459.99</td>
+                  <td class="date-cell">Jun 15</td>
+    
+                  <td class="action-menu">
+                    <button class="dots-btn">⋯</button>
+                  </td>
+                </tr>
+              
+                <tr>
+                  <td><input type="checkbox" /></td>
+                  <td>#192533</td>
+                  <td class="customer-cell">
+                    <div class="customer-info">
+                      <div class="avatar">JT</div>
+                      <span>Joshua Thompson</span>
+                    </div>
+                  </td>
+                  <td>Shipping</td>
+                  <td class="status cancelled">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="red" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-x">
+                      <path d="M18 6 6 18"/>
+                      <path d="m6 6 12 12"/>
+                    </svg>
+                    Cancelled
+                  </td>              
+                  <td>Power Washer</td>
+                  <td>$639.00</td>
+                  <td class="date-cell">Jun 14</td>
+    
+                  <td class="action-menu">
+                    <button class="dots-btn">⋯</button>
+                  </td>
+                </tr>
+              
+                <tr>
+                  <td><input type="checkbox" /></td>
+                  <td>#192532</td>
+                  <td class="customer-cell">
+                    <div class="customer-info">
+                      <div class="avatar">MM</div>
+                      <span>Megan Martin</span>
+                    </div>
+                  </td>
+                  <td>Shipping</td>
+                  <td class="status paid">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check">
+                      <path d="M20 6 9 17l-5-5"/>
+                    </svg>
+                    Paid
+                  </td>
+                  <td>Lawn Mower</td>
+                  <td>$1,020.00</td>
+                  <td class="date-cell">Jun 14</td>
+    
+                  <td class="action-menu">
+                    <button class="dots-btn">⋯</button>
+                  </td>
+                </tr>
+              
+                <tr>
+                  <td><input type="checkbox" /></td>
+                  <td>#192531</td>
+                  <td class="customer-cell">
+                    <div class="customer-info">
+                      <div class="avatar">DG</div>
+                      <span>Daniel Garcia</span>
+                    </div>
+                  </td>
+                  <td>Shipping</td>
+                  <td class="status paid">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check">
+                      <path d="M20 6 9 17l-5-5"/>
+                    </svg>
+                    Paid
+                  </td>
+                  <td>Leaf Blower</td>
+                  <td>$158.00</td>
+                  <td class="date-cell">Jun 13</td>
+    
+                  <td class="action-menu">
+                    <button class="dots-btn">⋯</button>
+                  </td>
+                </tr>
+              
+                <tr>
+                  <td><input type="checkbox" /></td>
+                  <td>#192530</td>
+                  <td class="customer-cell">
+                    <div class="customer-info">
+                      <div class="avatar">LF</div>
+                      <span>Laura Fisher</span>
+                    </div>
+                  </td>
+                  <td>Shipping</td>
+                  <td class="status paid">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check">
+                      <path d="M20 6 9 17l-5-5"/>
+                    </svg>
+                    Paid
+                  </td>
+                  <td>Chainsaw CS540</td>
+                  <td>$499.99</td>
+                  <td class="date-cell">Jun 13</td>
+    
+                  <td class="action-menu">
+                    <button class="dots-btn">⋯</button>
+                  </td>
+                </tr>
+              </tbody>
+              
+            </table>
+          </section>
+    
+          <footer class="footer-actions">
+            <div class="cancel-box">
+              <button class="cancel-btn">✕</button>
+            </div>
           
-            <tr>
-              <td><input type="checkbox" /></td>
-              <td>#192536</td>
-              <td class="customer-cell">
-                <div class="customer-info">
-                  <div class="avatar">WJ</div>
-                  <span>William Jackson</span>
-                </div>
-              </td>
-              <td>Shipping</td>
-              <td class="status paid">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check">
-                  <path d="M20 6 9 17l-5-5"/>
+            <div class="action-box">
+              <span id="selected-count">Selected: 0</span>
+          
+              <button>
+                <!-- Export Icon -->
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M8 6L12 2L16 6"/><path d="M12 2V22"/>
                 </svg>
-                Paid
-              </td>
-              <td>Multi-Tool Set</td>
-              <td>$299.00</td>
-              <td>Jun 16</td>
-            </tr>
+                Export
+              </button>
           
-            <tr>
-              <td><input type="checkbox" /></td>
-              <td>#192535</td>
-              <td class="customer-cell">
-                <div class="customer-info">
-                  <div class="avatar">CH</div>
-                  <span>Christopher Harris</span>
-                </div>
-              </td>
-              <td>Pickups</td>
-              <td class="status paid">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check">
-                  <path d="M20 6 9 17l-5-5"/>
+              <button>
+                <!-- Print Icon -->
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/>
+                  <path d="M6 9V3a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v6"/>
+                  <rect x="6" y="14" width="12" height="8" rx="1"/>
                 </svg>
-                Paid
-              </td>
-              <td>Generator GX200</td>
-              <td>$2,090.50</td>
-              <td>Jun 15</td>
-            </tr>
+                Print
+              </button>
           
-            <tr>
-              <td><input type="checkbox" /></td>
-              <td>#192534</td>
-              <td class="customer-cell">
-                <div class="customer-info">
-                  <div class="avatar">MK</div>
-                  <span>Marcus Kenter</span>
-                </div>
-              </td>
-              <td>Shipping</td>
-              <td class="status paid">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check">
-                  <path d="M20 6 9 17l-5-5"/>
+              <button>
+                <!-- Duplicate Icon -->
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect width="14" height="14" x="8" y="8" rx="2" ry="2"/>
+                  <path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/>
                 </svg>
-                Paid
-              </td>
-              <td>Air Compressor</td>
-              <td>$459.99</td>
-              <td>Jun 15</td>
-            </tr>
+                Duplicate
+              </button>
           
-            <tr>
-              <td><input type="checkbox" /></td>
-              <td>#192533</td>
-              <td class="customer-cell">
-                <div class="customer-info">
-                  <div class="avatar">JT</div>
-                  <span>Joshua Thompson</span>
-                </div>
-              </td>
-              <td>Shipping</td>
-              <td class="status cancelled">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="red" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-x">
-                  <path d="M18 6 6 18"/>
-                  <path d="m6 6 12 12"/>
+              <button>
+                <!-- More Icon -->
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="1"/>
+                  <circle cx="19" cy="12" r="1"/>
+                  <circle cx="5" cy="12" r="1"/>
                 </svg>
-                Cancelled
-              </td>              
-              <td>Power Washer</td>
-              <td>$639.00</td>
-              <td>Jun 14</td>
-            </tr>
+              </button>
+            </div>
+          </footer>
           
-            <tr>
-              <td><input type="checkbox" /></td>
-              <td>#192532</td>
-              <td class="customer-cell">
-                <div class="customer-info">
-                  <div class="avatar">MM</div>
-                  <span>Megan Martin</span>
-                </div>
-              </td>
-              <td>Shipping</td>
-              <td class="status paid">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check">
-                  <path d="M20 6 9 17l-5-5"/>
-                </svg>
-                Paid
-              </td>
-              <td>Lawn Mower</td>
-              <td>$1,020.00</td>
-              <td>Jun 14</td>
-            </tr>
-          
-            <tr>
-              <td><input type="checkbox" /></td>
-              <td>#192531</td>
-              <td class="customer-cell">
-                <div class="customer-info">
-                  <div class="avatar">DG</div>
-                  <span>Daniel Garcia</span>
-                </div>
-              </td>
-              <td>Shipping</td>
-              <td class="status paid">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check">
-                  <path d="M20 6 9 17l-5-5"/>
-                </svg>
-                Paid
-              </td>
-              <td>Leaf Blower</td>
-              <td>$158.00</td>
-              <td>Jun 13</td>
-            </tr>
-          
-            <tr>
-              <td><input type="checkbox" /></td>
-              <td>#192530</td>
-              <td class="customer-cell">
-                <div class="customer-info">
-                  <div class="avatar">LF</div>
-                  <span>Laura Fisher</span>
-                </div>
-              </td>
-              <td>Shipping</td>
-              <td class="status paid">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check">
-                  <path d="M20 6 9 17l-5-5"/>
-                </svg>
-                Paid
-              </td>
-              <td>Chainsaw CS540</td>
-              <td>$499.99</td>
-              <td>Jun 13</td>
-            </tr>
-          </tbody>
-          
-        </table>
-      </section>
-
-      <footer class="footer-actions">
-        <div class="cancel-box">
-          <button class="cancel-btn">✕</button>
-        </div>
-      
-        <div class="action-box">
-          <span>Selected: 5</span>
-      
-          <button>
-            <!-- Export Icon -->
-            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M8 6L12 2L16 6"/><path d="M12 2V22"/>
-            </svg>
-            Export
-          </button>
-      
-          <button>
-            <!-- Print Icon -->
-            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/>
-              <path d="M6 9V3a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v6"/>
-              <rect x="6" y="14" width="12" height="8" rx="1"/>
-            </svg>
-            Print
-          </button>
-      
-          <button>
-            <!-- Duplicate Icon -->
-            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <rect width="14" height="14" x="8" y="8" rx="2" ry="2"/>
-              <path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/>
-            </svg>
-            Duplicate
-          </button>
-      
-          <button>
-            <!-- More Icon -->
-            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <circle cx="12" cy="12" r="1"/>
-              <circle cx="19" cy="12" r="1"/>
-              <circle cx="5" cy="12" r="1"/>
-            </svg>
-          </button>
-        </div>
-      </footer>
-      
-    </main>
-
-    <aside class="sidebar-right">
-      <div class="semicircle-stat">
+        </main>
+      <!-- Reopen Sidebar Button -->
+<button class="reopen-btn" id="reopenBtn" onclick="toggleSidebar()" aria-label="Open sidebar">
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right-from-line-icon">
+    <path d="M3 5v14"/>
+    <path d="M21 12H7"/>
+    <path d="m15 18 6-6-6-6"/>
+  </svg>
+</button>
+    </div>
+  </div>
+  <aside class="sidebar-right">
+    <div class="semicircle-stat">
         <h4 class="stat-title">RECEIPT OF GOODS</h4>
         <div class="gauge-wrapper">
           <svg viewBox="0 0 100 50" class="gauge-svg">
-            <path class="gauge-bg" d="M10,50 A40,40 0 0,1 90,50" />
-            <path class="gauge-fill" d="M10,50 A40,40 0 0,1 40,10" />
-            <text x="50" y="32" text-anchor="middle" class="main-amount">$2.2m</text>
-            <text x="50" y="42" text-anchor="middle" class="sub-orders">242 orders</text>
+            <!-- Background arc -->
+            <path
+              d="M10,50 A40,40 0 0,1 90,50"
+              stroke="#E5E8EF"
+              stroke-width="4"
+              fill="none"
+              stroke-linecap="round"
+              stroke-dasharray="999" 
+            />
+          
+            <!-- Foreground arc with exact stroke-dasharray -->
+            <path
+              d="M10,50 A40,40 0 0,1 90,50"
+              stroke="#0B3E1D"
+              stroke-width="4"
+              fill="none"
+              stroke-linecap="round"
+              stroke-dasharray="30 999" 
+              stroke-dashoffset="0"
+            />
+          
+            <!-- Text Labels -->
+            <text x="50" y="38" text-anchor="middle"  font-family="'Inter', sans-serif"  font-size="8" fill="#0F172A">$2.2m</text>
+            <text x="50" y="46" text-anchor="middle" font-family="'Inter', sans-serif"  font-size="5" fill="#94A3B8">242 orders</text>
           </svg>
+          
         </div>
+        
+        
         <div class="gauge-metrics">
           <div class="metric">
             <span class="dot green"></span>
@@ -436,25 +530,57 @@
           </div>
         </div>
       </div>
-    
-      <div class="order-status">
-        <h4>Orders Status <span class="right-label">Active</span></h4>
-        <div class="progress-bar">
-          <div class="progress-paid" style="width: 89%"></div>
-          <div class="progress-cancelled" style="width: 8%"></div>
-          <div class="progress-refunded" style="width: 3%"></div>
+       <div class="order-status-panel">
+        <div class="order-status-header">
+          <h4>ORDERS STATUS</h4>
+          <span class="right-label">
+            Active
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="m6 9 6 6 6-6"/>
+            </svg>
+          </span>
         </div>
-        <ul>
-          <li><span>Paid</span> <span>89%</span></li>
-          <li><span>Cancelled</span> <span>8%</span></li>
-          <li><span>Refunded</span> <span>3%</span></li>
+      
+        <div class="status-progress-bar">
+          <div class="bar paid" style="width: 89%"></div>
+          <div class="bar cancelled" style="width: 8%"></div>
+          <div class="bar refunded" style="width: 3%"></div>
+        </div>
+       <ul class="order-status-list">
+          <li>
+            <div class="status-left">
+              <span class="dot paid"></span>
+              <span class="label">Paid</span>
+            </div>
+            <span class="percent">89%</span>
+          </li>
+          <li>
+            <div class="status-left">
+              <span class="dot cancelled"></span>
+              <span class="label">Cancelled</span>
+            </div>
+            <span class="percent">8%</span>
+          </li>
+          <li>
+            <div class="status-left">
+              <span class="dot refunded"></span>
+              <span class="label">Refunded</span>
+            </div>
+            <span class="percent">3%</span>
+          </li>
         </ul>
-      </div>
-    
+        
+      </div> 
       <div class="overview">
         <div class="overview-header">
           <h4>OVERVIEW</h4>
-          <span class="right-label">This month ▼</span>
+          <span class="right-label">
+            This month
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-down">
+              <path d="m6 9 6 6 6-6"/>
+            </svg>
+          </span>
+          
         </div>
         <div class="overview-grid">
           <div class="overview-item">
@@ -485,25 +611,53 @@
       </div>
       
     
-      <div class="top-sellers">
-        <h4>Top Sellers 
-          <div class="dropdown">
-            <button class="dropdown-btn">This month ▼</button>
-            <div class="dropdown-menu">
-              <a href="#">Today</a>
-              <a href="#">This week</a>
-              <a href="#">This month</a>
-              <a href="#">This year</a>
-            </div>
+      <div class="top-sellers-header">
+        <h4>Top Sellers</h4>
+        <div class="dropdown">
+          <span class="right-label">
+            This month
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-down">
+              <path d="m6 9 6 6 6-6"/>
+            </svg>
+          </span>
+          
+          <div class="dropdown-menu">
+            <a href="#">Today</a>
+            <a href="#">This week</a>
+            <a href="#">This month</a>
+            <a href="#">This year</a>
           </div>
-        </h4>
-        
+        </div>
+      </div>
+      
+      <div class="top-sellers-content">
         <p>
-          <img src="assets/generator.png" alt="generator" />
+          <img src="img/generator.jpeg" alt="generator" />
           Gasoline generator EYG 7500i (inverter) <strong>14</strong>
         </p>
       </div>
-    </aside>
+    <!-- 🔁 Paste your entire analytics / overview / stats / top sellers sidebar here -->
+  </aside>
+
+  <!-- ✅ TOGGLE LOGIC -->
+  <script>
+    function toggleSidebar() {
+      const sidebar = document.getElementById('sidebar');
+      const layout = document.getElementById('layoutWrapper');
+      const main = document.getElementById('mainContent');
+      const reopenBtn = document.getElementById('reopenBtn');
+
+      sidebar.classList.toggle('closed');
+
+      if (sidebar.classList.contains('closed')) {
+        layout.classList.add('sidebar-collapsed');
+        reopenBtn.style.display = 'block';
+      } else {
+        layout.classList.remove('sidebar-collapsed');
+        reopenBtn.style.display = 'none';
+      }
+    }
+  </script>
   </div>
 </body>
 </html>
