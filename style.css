@@ -19,7 +19,7 @@ body {
 .dashboard {
   display: flex;
   width: 100%;
-  height: 100vh;
+  height: 100%;
 }
 /* Sidebar Redesign */
 .sidebar {
@@ -841,7 +841,9 @@ th:first-child, td:first-child {
 /* Main layout wrapper */
 .wrapper {
   display: flex;
-  min-height: 100vh;
+  flex:1;
+  height: 100%;
+  width: 100%;
   transition: margin-left 0.3s ease;
 }
 
@@ -976,7 +978,6 @@ th:first-child, td:first-child {
   flex: 1;
   padding: 24px;
   transition: all 0.3s ease;
-  min-width: 0;
 }
 
 /* Right sidebar should not overflow */
@@ -1014,7 +1015,6 @@ th:first-child, td:first-child {
 .main-content {
   flex-grow: 1;
   flex-shrink: 1;
-  min-width: 0;
   padding: 24px;
   background-color: white;
   transition: all 0.3s ease;
@@ -1160,7 +1160,7 @@ th:first-child, td:first-child {
 
 .label {
   font-size: 12px;
-  color: #94a3b8;
+  color: #706060;
 }
 
 
@@ -1403,6 +1403,7 @@ html, body {
 
 .top {
   height: 100vh;
+  width: 100vw;
   display: flex;
   border: 5px solid #081420;  /* Blue border */
   border-radius: 10px;
